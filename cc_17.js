@@ -43,3 +43,28 @@ class Customer {
       return client ? client.totalSpent : null; 
     }
   }
+
+  //Task 3
+
+class Customer {
+    constructor(name, totalSpent) {
+      this.name = name;
+      this.totalSpent = totalSpent;
+    }
+  
+    getTotalSpent() {
+      return this.totalSpent;
+    }
+  }
+  class VIPCustomer extends Customer {
+    constructor(name, totalSpent, vipLevel) {
+      super(name, totalSpent); 
+      this.vipLevel = vipLevel; 
+    }
+  
+    getTotalSpent() {
+      const bonus = 0.1 * this.totalSpent;
+      return this.totalSpent + bonus;
+    }
+  }
+  
